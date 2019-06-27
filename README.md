@@ -408,9 +408,11 @@ var xhr = window.XMLHttpRequest
 // xhr 的成员相同
 ```
 
-## 封装
+## 封装 AJAX 库
 
-### AJAX 请求封装
+### 自己封装一个 AJAX 函数
+
+> 这里主要是为了了解封装的过程，一般情况在开发中都是使用第三方提供的 AJAX 库，因为它们可能更加严谨。
 
 为了在后续的开发过程中可以更方便的使用这套 API，一般的做法都是将其封装到一个函数中以便调用。
 
@@ -553,7 +555,9 @@ POST 请求快捷方法
 
 ### Axios
 
-Axios 是目前应用最为广泛的 AJAX 封装库，相对于 jQuery 的优势在于功能能强劲，职责更单一，后期专门有介绍。
+> https://github.com/axios/axios
+
+Axios 是目前应用最为广泛的 AJAX 封装库，相对于 jQuery 的优势在于支持 `Promise`、功能更强劲、职责更单一，后期会专门介绍到。
 
 ```javascript
 axios
@@ -565,8 +569,6 @@ axios
     console.error(err);
   });
 ```
-
-> 扩展：https://github.com/axios/axios （现在非常流行的 AJAX 库）
 
 ## XMLHttpRequest 2.0
 
@@ -637,7 +639,7 @@ data.append("key", "value");
 data.append("file", dom.files[0]);
 
 var xhr = new XMLHttpRequest();
-xhr.open("POST", "/api/users");
+xhr.open("POST", "/api/upload");
 xhr.send(data);
 xhr.onload = function() {
   console.log(this.responseText);
